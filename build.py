@@ -182,7 +182,7 @@ ACCUEIL = """
         <path fill-rule="evenodd" d="M40 36h20l32 82H71l-7.4-19H36.4L29 118H8L40 36zm10 20.5-9.2 25h18.4L50 56.5z"/>
       </svg>
       <p class="lockup-name">Art Impact</p>
-      <p class="lockup-base">Think Tank &bull; Culture &bull; Entreprises &bull; Territoires</p>
+      <p class="lockup-base">think tank &bull; culture &bull; entreprises &bull; territoires</p>
     </div>
     <p class="eyebrow">Think Tank &middot; Responsabilité Culturelle des Entreprises</p>
     <h1>La culture, pilier d’impact des organisations et des territoires.</h1>

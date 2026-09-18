@@ -319,12 +319,12 @@ section{position:relative}
   letter-spacing:.02em;color:#F5F2EC;margin:0 0 18px;
 }
 .lockup-base{
-  font-size:clamp(.66rem,1.5vw,.78rem);letter-spacing:.2em;text-transform:uppercase;
+  font-size:clamp(.74rem,1.7vw,.92rem);letter-spacing:.06em;
   color:var(--text-dim);margin:0;line-height:1.7;
 }
 .logo-lockup + .eyebrow{justify-content:center}
 .logo-lockup + .eyebrow::before,
 .logo-lockup + .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);max-width:90px}
 @media(max-width:560px){
-  .lockup-base{letter-spacing:.14em}
+  .lockup-base{letter-spacing:.02em}
 }
