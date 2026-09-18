@@ -334,3 +334,25 @@ section{position:relative}
 @media(max-width:560px){
   .lockup-base{letter-spacing:.02em}
 }
+
+/* ---------- Questions frequentes ---------- */
+.faq{border-top:1px solid var(--line-soft);max-width:900px}
+.qa{border-bottom:1px solid var(--line-soft)}
+.qa summary{
+  list-style:none;cursor:pointer;padding:26px 44px 26px 0;position:relative;
+  display:block;transition:color .25s;
+}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary h3{display:inline;font-size:clamp(1.12rem,2vw,1.4rem);color:var(--text)}
+.qa summary:hover h3{color:var(--gold-soft)}
+.qa summary::after{
+  content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;
+  border-right:1.5px solid var(--gold);border-bottom:1.5px solid var(--gold);
+  transform:translateY(-70%) rotate(45deg);transition:transform .3s;
+}
+.qa[open] summary::after{transform:translateY(-30%) rotate(-135deg)}
+.qa > p{
+  margin:0;padding:0 44px 30px 0;color:var(--text-dim);
+  font-size:1rem;max-width:72ch;
+}
+.qa summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px}

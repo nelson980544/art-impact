@@ -45,7 +45,16 @@ TEMPLATE = """<!DOCTYPE html>
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{site}/{slug}">
+<meta property="og:image" content="{site}/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Art Impact — think tank de la Responsabilité Culturelle des Entreprises">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{site}/assets/img/og-image.jpg">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Art Impact">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 <link rel="apple-touch-icon" href="assets/img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,11 +62,7 @@ TEMPLATE = """<!DOCTYPE html>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <script type="application/ld+json">
-{{"@context":"https://schema.org","@type":"Organization","name":"Art Impact",
-"alternateName":"Think Tank de la Responsabilité Culturelle des Entreprises",
-"url":"{site}","email":"{email}",
-"description":"Art Impact est le think tank qui place la culture au cœur des stratégies d\\u2019impact des entreprises et des territoires.",
-"parentOrganization":{{"@type":"NGO","name":"Art for Good"}}}}
+{jsonld}
 </script>
 </head>
 <body>
@@ -1071,23 +1076,23 @@ PAGES = [
     # slug, titre <title>, meta description, corps
     ("index.html",
      "Art Impact — Think Tank de la Responsabilité Culturelle des Entreprises",
-     "Art Impact est le think tank qui place la culture au cœur des stratégies d’impact des "
-     "entreprises et des territoires. Référentiel RCE, Observatoire national, programmes à impact.",
+     "Art Impact est le think tank qui place la culture au cœur des stratégies d’impact "
+     "des entreprises et des territoires. Référentiel RCE et Observatoire national.",
      ACCUEIL),
     ("think-tank.html",
      "Le Think Tank — Art Impact",
-     "Art Impact rassemble celles et ceux qui pensent, expérimentent et déploient la Responsabilité "
-     "Culturelle des Entreprises : analyses, référentiels, données, programmes et alliances.",
+     "Analyses, référentiels, données et programmes : Art Impact fait de la culture un "
+     "levier stratégique reconnu, mesurable et durable pour les organisations.",
      THINK_TANK),
     ("rce.html",
      "La RCE, Responsabilité Culturelle des Entreprises — Art Impact",
-     "La RCE intègre la culture dans la stratégie globale des organisations, au même niveau que "
-     "l’environnement, le social ou la gouvernance. Découvrez les 4 piliers du référentiel.",
+     "La Responsabilité Culturelle des Entreprises intègre la culture dans la stratégie "
+     "globale des organisations. Découvrez les 4 piliers du référentiel RCE.",
      RCE),
     ("observatoire.html",
      "Observatoire National RCE — Art Impact",
-     "La première base de données française dédiée à l’impact culturel des organisations : "
-     "baromètre annuel, études sectorielles, cartographie nationale, indicateurs, méthodologie.",
+     "La première base de données française sur l’impact culturel des organisations : "
+     "baromètre annuel, études sectorielles, cartographie et indicateurs RCE.",
      OBSERVATOIRE),
     ("programmes.html",
      "Programmes &amp; Territoires — Art Impact",
@@ -1101,8 +1106,8 @@ PAGES = [
      RESSOURCES),
     ("evenements.html",
      "Événements — Art Impact",
-     "Art Impact Live, rencontres entreprises, ateliers territoriaux, conférences thématiques et le "
-     "Marathon de l’Art 2027 : des moments pour penser ensemble et construire.",
+     "Art Impact Live, rencontres entreprises, ateliers territoriaux, conférences et "
+     "Marathon de l’Art 2027 : les rendez-vous du think tank.",
      EVENEMENTS),
     ("art-for-good.html",
      "Art for Good — L’origine d’Art Impact",
@@ -1121,8 +1126,8 @@ PAGES = [
      PRESSE),
     ("contact.html",
      "Contact — Art Impact",
-     "Formulaire, email direct, newsletter et don : Art Impact est un think tank ouvert, en dialogue "
-     "permanent avec les entreprises, les institutions et les territoires.",
+     "Formulaire, email, newsletter et don : Art Impact dialogue avec les entreprises, "
+     "les institutions, les territoires et les acteurs culturels.",
      CONTACT),
     ("merci.html",
      "Merci — Art Impact",
@@ -1134,6 +1139,229 @@ PAGES = [
      "du site Art Impact.",
      MENTIONS),
 ]
+
+
+# --------------------------------------------------------------------------
+# Donnees structurees (JSON-LD) — comprehension par Google et par les IA
+# --------------------------------------------------------------------------
+import json as _json
+from datetime import date as _date
+
+# Fil d'Ariane : slug -> libelle affiche dans les resultats de recherche
+FIL = {
+    "think-tank.html": "Le Think Tank",
+    "rce.html": "Responsabilité Culturelle des Entreprises",
+    "observatoire.html": "Observatoire National RCE",
+    "programmes.html": "Programmes & Territoires",
+    "ressources.html": "Ressources",
+    "evenements.html": "Événements",
+    "art-for-good.html": "Art for Good",
+    "go-for-art.html": "Go-for-Art.com",
+    "presse.html": "Presse & Médias",
+    "contact.html": "Contact",
+    "mentions-legales.html": "Mentions légales",
+    "merci.html": "Merci",
+}
+
+# Questions reellement posees sur le sujet : ce sont elles que les moteurs
+# generatifs citent. Reponses courtes, autonomes, factuelles.
+FAQ = {
+    "rce.html": [
+        ("Qu’est-ce que la Responsabilité Culturelle des Entreprises (RCE) ?",
+         "La Responsabilité Culturelle des Entreprises (RCE) est un cadre qui intègre la culture "
+         "dans la stratégie globale d’une organisation, au même niveau que l’environnement, le "
+         "social ou la gouvernance. Elle repose sur quatre piliers : Engagement & Cohésion, "
+         "Innovation & Créativité, Territoires & Attractivité, Environnement & Sensibilisation."),
+        ("Quelle est la différence entre la RSE et la RCE ?",
+         "La RSE structure l’engagement environnemental, social et de gouvernance d’une entreprise. "
+         "La RCE ajoute la dimension culturelle de la responsabilité : elle ne se réduit ni au "
+         "mécénat ni à la communication, mais engage la stratégie, les équipes, le territoire et "
+         "la raison d’être de l’organisation."),
+        ("Quels sont les 4 piliers de la RCE ?",
+         "Les quatre piliers de la RCE sont : 1) Engagement & Cohésion, la culture comme lien et "
+         "énergie collective ; 2) Innovation & Créativité, la culture comme capacité à inventer ; "
+         "3) Territoires & Attractivité, la culture comme moteur de développement local ; "
+         "4) Environnement & Sensibilisation, la culture comme vecteur de conscience écologique."),
+        ("Comment mettre en place une démarche RCE dans son entreprise ?",
+         "Une démarche RCE se déroule en quatre étapes : un diagnostic des actions culturelles "
+         "existantes, un cadrage stratégique définissant les priorités par pilier et les "
+         "indicateurs, le déploiement des programmes avec les artistes et les acteurs du "
+         "territoire, puis la mesure et la valorisation des effets obtenus."),
+    ],
+    "observatoire.html": [
+        ("Qu’est-ce que l’Observatoire National RCE ?",
+         "L’Observatoire National RCE est la première base de données française dédiée à l’impact "
+         "culturel des organisations. Il produit un baromètre annuel, des études sectorielles, une "
+         "cartographie nationale, des indicateurs et une méthodologie de référence."),
+        ("Comment mesurer l’impact culturel d’une entreprise ?",
+         "L’impact culturel se mesure à partir d’indicateurs partagés adossés aux quatre piliers "
+         "de la RCE. L’Observatoire National RCE fournit une méthodologie de référence documentée "
+         "qui permet à une organisation de situer ses actions, de se comparer à son secteur et de "
+         "suivre sa progression dans le temps."),
+    ],
+    "think-tank.html": [
+        ("Qu’est-ce qu’Art Impact ?",
+         "Art Impact est le think tank français qui place la culture au cœur des stratégies "
+         "d’impact des entreprises et des territoires. Il produit des analyses, des référentiels, "
+         "des données et des programmes autour de la Responsabilité Culturelle des Entreprises "
+         "(RCE). Il est porté par l’association Art for Good."),
+    ],
+    "index.html": [
+        ("Pourquoi la culture est-elle un levier d’impact pour les entreprises ?",
+         "La culture agit sur quatre dimensions mesurables : elle renforce la cohésion interne et "
+         "l’engagement des équipes, stimule la créativité et la capacité d’innovation, nourrit "
+         "l’attractivité des territoires, et sensibilise aux enjeux environnementaux par "
+         "l’émotion et l’expérience plutôt que par la seule donnée."),
+    ],
+}
+
+
+def faq_html(slug):
+    """Rend la FAQ visible : Google exige que le balisage FAQPage corresponde
+    a du contenu reellement affiche, et les moteurs generatifs citent ces
+    reponses courtes et autonomes."""
+    if slug not in FAQ:
+        return ""
+    items = "\n".join(
+        """      <details class="qa"{ouvert}>
+        <summary><h3>{q}</h3></summary>
+        <p>{r}</p>
+      </details>""".format(q=q, r=r, ouvert=" open" if i == 0 else "")
+        for i, (q, r) in enumerate(FAQ[slug])
+    )
+    return """
+<section class="sec sec-alt" id="questions">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Questions fréquentes</p>
+      <h2>Ce qu'il faut retenir</h2>
+    </div>
+    <div class="faq reveal">
+{items}
+    </div>
+  </div>
+</section>
+""".replace("{items}", items)
+
+
+def jsonld_page(slug, title, desc):
+    """Construit le graphe de donnees structurees d une page."""
+    url = SITE + "/" + ("" if slug == "index.html" else slug)
+    org_id, site_id = SITE + "/#organisation", SITE + "/#site"
+
+    organisation = {
+        "@type": ["Organization", "NGO"], "@id": org_id,
+        "name": "Art Impact",
+        "alternateName": "Think Tank de la Responsabilité Culturelle des Entreprises",
+        "url": SITE, "email": EMAIL,
+        "logo": {"@type": "ImageObject", "url": SITE + "/assets/img/og-image.jpg",
+                 "width": 1200, "height": 630},
+        "image": SITE + "/assets/img/og-image.jpg",
+        "description": "Art Impact est le think tank qui place la culture au cœur des stratégies "
+                       "d’impact des entreprises et des territoires.",
+        "areaServed": {"@type": "Country", "name": "France"},
+        "knowsAbout": ["Responsabilité Culturelle des Entreprises", "RCE", "impact culturel",
+                       "mécénat culturel", "RSE", "attractivité territoriale",
+                       "politique culturelle", "engagement des salariés"],
+        "parentOrganization": {"@type": "NGO", "name": "Art for Good", "url": HELLOASSO},
+        "contactPoint": [{"@type": "ContactPoint", "email": EMAIL,
+                          "contactType": "informations", "availableLanguage": "French"},
+                         {"@type": "ContactPoint", "email": EMAIL_PRESSE,
+                          "contactType": "presse", "availableLanguage": "French"}],
+    }
+
+    site_web = {
+        "@type": "WebSite", "@id": site_id, "url": SITE, "name": "Art Impact",
+        "inLanguage": "fr-FR", "publisher": {"@id": org_id},
+    }
+
+    page = {
+        "@type": "WebPage", "@id": url + "#page", "url": url,
+        "name": title, "description": desc, "inLanguage": "fr-FR",
+        "isPartOf": {"@id": site_id}, "about": {"@id": org_id},
+        "primaryImageOfPage": SITE + "/assets/img/og-image.jpg",
+        "breadcrumb": {"@id": url + "#fil"},
+    }
+
+    graphe = [organisation, site_web, page]
+
+    fil = [{"@type": "ListItem", "position": 1, "name": "Accueil", "item": SITE + "/"}]
+    if slug in FIL:
+        fil.append({"@type": "ListItem", "position": 2, "name": FIL[slug], "item": url})
+    graphe.append({"@type": "BreadcrumbList", "@id": url + "#fil", "itemListElement": fil})
+
+    if slug in FAQ:
+        graphe.append({
+            "@type": "FAQPage", "@id": url + "#faq",
+            "mainEntity": [{"@type": "Question", "name": q,
+                            "acceptedAnswer": {"@type": "Answer", "text": r}}
+                           for q, r in FAQ[slug]],
+        })
+
+    return _json.dumps({"@context": "https://schema.org", "@graph": graphe},
+                       ensure_ascii=False, separators=(",", ":"))
+
+
+def ecrire_llms():
+    """llms.txt : standard emergent qui donne aux moteurs generatifs une
+    synthese fiable du site, en Markdown, sans avoir a interpreter le HTML."""
+    txt = """# Art Impact
+
+> Art Impact est le think tank français qui place la culture au cœur des stratégies
+> d’impact des entreprises et des territoires. Il structure et diffuse la
+> Responsabilité Culturelle des Entreprises (RCE).
+
+Art Impact produit des analyses, des référentiels, des données, des programmes et des
+alliances pour faire de la culture un levier stratégique reconnu, mesurable et durable.
+Le think tank est porté par l’association Art for Good.
+
+## Définitions de référence
+
+- **Responsabilité Culturelle des Entreprises (RCE)** : cadre qui intègre la culture dans
+  la stratégie globale d’une organisation, au même niveau que l’environnement, le social
+  ou la gouvernance. Elle repose sur quatre piliers.
+- **Les 4 piliers de la RCE** : Engagement & Cohésion ; Innovation & Créativité ;
+  Territoires & Attractivité ; Environnement & Sensibilisation.
+- **Observatoire National RCE** : première base de données française dédiée à l’impact
+  culturel des organisations (baromètre annuel, études sectorielles, cartographie
+  nationale, indicateurs, méthodologie de référence).
+- **Différence RSE / RCE** : la RSE couvre l’environnemental, le social et la gouvernance ;
+  la RCE ajoute la dimension culturelle, au-delà du mécénat et de la communication.
+
+## Pages principales
+
+- [Accueil](SITEURL/) : l’ambition et la vision d’Art Impact.
+- [Le Think Tank](SITEURL/think-tank.html) : raison d’être, rôle, méthode en trois temps.
+- [La RCE](SITEURL/rce.html) : définition, 4 piliers, mise en œuvre du diagnostic au déploiement.
+- [Observatoire National RCE](SITEURL/observatoire.html) : la mesure de l’impact culturel.
+- [Programmes & Territoires](SITEURL/programmes.html) : Art & Cohésion, Art & Innovation,
+  Art & Environnement, Art & Attractivité territoriale.
+- [Plateforme de ressources](SITEURL/ressources.html) : notes d’analyse, rapports, guides,
+  vidéos, webinaires, bibliothèque RCE.
+- [Événements](SITEURL/evenements.html) : Art Impact Live, rencontres entreprises, ateliers
+  territoriaux, conférences, Marathon de l’Art 2027.
+
+## Écosystème
+
+- [Art for Good](SITEURL/art-for-good.html) : l’association fondatrice qui porte Art Impact.
+- [Go-for-Art.com](SITEURL/go-for-art.html) : plateforme phygitale d’accès à l’art
+  (expositions, QR codes, parcours culturels).
+
+## Contact
+
+- [Contact](SITEURL/contact.html) — ADRMAIL
+- [Presse & Médias](SITEURL/presse.html) — ADRPRESSE
+
+## Citation
+
+Source à citer : Art Impact, think tank de la Responsabilité Culturelle des Entreprises,
+SITEURL
+"""
+    txt = (txt.replace("SITEURL", SITE)
+              .replace("ADRPRESSE", EMAIL_PRESSE)
+              .replace("ADRMAIL", EMAIL))
+    (ROOT / "llms.txt").write_text(txt, encoding="utf-8")
+    print("  + llms.txt")
 
 
 def build():
@@ -1149,7 +1377,9 @@ def build():
             helloasso=HELLOASSO, form=FORM_ENDPOINT, site=SITE,
             w3key=WEB3FORMS_KEY,
         ) if "{" in body else body
+        body = body + faq_html(slug)
         html = TEMPLATE.format(
+            jsonld=jsonld_page(slug, title.replace("&amp;", "&"), desc),
             title=title, desc=desc.replace('"', "&quot;"),
             slug="" if slug == "index.html" else slug,
             site=SITE, email=EMAIL, helloasso=HELLOASSO,
@@ -1160,9 +1390,10 @@ def build():
 
     # sitemap.xml
     urls = "\n".join(
-        "  <url><loc>{}/{}</loc><changefreq>monthly</changefreq>"
-        "<priority>{}</priority></url>".format(
-            SITE, "" if s == "index.html" else s, "1.0" if s == "index.html" else "0.8")
+        "  <url><loc>{}/{}</loc><lastmod>{}</lastmod>"
+        "<changefreq>monthly</changefreq><priority>{}</priority></url>".format(
+            SITE, "" if s == "index.html" else s, _date.today().isoformat(),
+            "1.0" if s == "index.html" else "0.8")
         for s, _, _, _ in PAGES if s != "merci.html"
     )
     (ROOT / "sitemap.xml").write_text(
@@ -1171,8 +1402,20 @@ def build():
         + urls + "\n</urlset>\n", encoding="utf-8")
     print("  + sitemap.xml")
 
-    (ROOT / "robots.txt").write_text(
-        "User-agent: *\nAllow: /\n\nSitemap: {}/sitemap.xml\n".format(SITE), encoding="utf-8")
+    # Autorisation explicite des robots d indexation ET des moteurs generatifs.
+    # Sans mention, certains crawlers IA s abstiennent par defaut.
+    ia = ["GPTBot", "OAI-SearchBot", "ChatGPT-User", "ClaudeBot", "Claude-User",
+          "Claude-SearchBot", "anthropic-ai", "PerplexityBot", "Perplexity-User",
+          "Google-Extended", "Applebot", "Applebot-Extended", "Bingbot",
+          "meta-externalagent", "Amazonbot", "DuckAssistBot", "cohere-ai",
+          "MistralAI-User", "YouBot"]
+    lignes = ["User-agent: *", "Allow: /", ""]
+    for bot in ia:
+        lignes += ["User-agent: " + bot, "Allow: /", ""]
+    lignes += ["Sitemap: {}/sitemap.xml".format(SITE), ""]
+    (ROOT / "robots.txt").write_text("\n".join(lignes), encoding="utf-8")
+    print("  + robots.txt")
+    ecrire_llms()
     print("  + robots.txt")
 
 

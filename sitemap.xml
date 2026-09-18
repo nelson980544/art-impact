@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://art-impact.org/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://art-impact.org/think-tank.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/rce.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/observatoire.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/programmes.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/ressources.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/evenements.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/art-for-good.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/go-for-art.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/presse.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/contact.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://art-impact.org/mentions-legales.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://art-impact.org/think-tank.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/rce.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/observatoire.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/programmes.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/ressources.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/evenements.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/art-for-good.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/go-for-art.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/presse.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/contact.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://art-impact.org/mentions-legales.html</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

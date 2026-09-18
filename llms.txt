@@ -1,0 +1,51 @@
+# Art Impact
+
+> Art Impact est le think tank français qui place la culture au cœur des stratégies
+> d’impact des entreprises et des territoires. Il structure et diffuse la
+> Responsabilité Culturelle des Entreprises (RCE).
+
+Art Impact produit des analyses, des référentiels, des données, des programmes et des
+alliances pour faire de la culture un levier stratégique reconnu, mesurable et durable.
+Le think tank est porté par l’association Art for Good.
+
+## Définitions de référence
+
+- **Responsabilité Culturelle des Entreprises (RCE)** : cadre qui intègre la culture dans
+  la stratégie globale d’une organisation, au même niveau que l’environnement, le social
+  ou la gouvernance. Elle repose sur quatre piliers.
+- **Les 4 piliers de la RCE** : Engagement & Cohésion ; Innovation & Créativité ;
+  Territoires & Attractivité ; Environnement & Sensibilisation.
+- **Observatoire National RCE** : première base de données française dédiée à l’impact
+  culturel des organisations (baromètre annuel, études sectorielles, cartographie
+  nationale, indicateurs, méthodologie de référence).
+- **Différence RSE / RCE** : la RSE couvre l’environnemental, le social et la gouvernance ;
+  la RCE ajoute la dimension culturelle, au-delà du mécénat et de la communication.
+
+## Pages principales
+
+- [Accueil](https://art-impact.org/) : l’ambition et la vision d’Art Impact.
+- [Le Think Tank](https://art-impact.org/think-tank.html) : raison d’être, rôle, méthode en trois temps.
+- [La RCE](https://art-impact.org/rce.html) : définition, 4 piliers, mise en œuvre du diagnostic au déploiement.
+- [Observatoire National RCE](https://art-impact.org/observatoire.html) : la mesure de l’impact culturel.
+- [Programmes & Territoires](https://art-impact.org/programmes.html) : Art & Cohésion, Art & Innovation,
+  Art & Environnement, Art & Attractivité territoriale.
+- [Plateforme de ressources](https://art-impact.org/ressources.html) : notes d’analyse, rapports, guides,
+  vidéos, webinaires, bibliothèque RCE.
+- [Événements](https://art-impact.org/evenements.html) : Art Impact Live, rencontres entreprises, ateliers
+  territoriaux, conférences, Marathon de l’Art 2027.
+
+## Écosystème
+
+- [Art for Good](https://art-impact.org/art-for-good.html) : l’association fondatrice qui porte Art Impact.
+- [Go-for-Art.com](https://art-impact.org/go-for-art.html) : plateforme phygitale d’accès à l’art
+  (expositions, QR codes, parcours culturels).
+
+## Contact
+
+- [Contact](https://art-impact.org/contact.html) — contact@art-impact.org
+- [Presse & Médias](https://art-impact.org/presse.html) — presse@art-impact.org
+
+## Citation
+
+Source à citer : Art Impact, think tank de la Responsabilité Culturelle des Entreprises,
+https://art-impact.org
