@@ -176,6 +176,14 @@ def page_hero(eyebrow, h1, lead):
 ACCUEIL = """
 <section class="hero">
   <div class="wrap">
+    <div class="logo-lockup">
+      <svg class="lockup-mark" viewBox="0 0 100 124" aria-hidden="true" focusable="false">
+        <circle cx="50" cy="15" r="12.5"/>
+        <path fill-rule="evenodd" d="M40 36h20l32 82H71l-7.4-19H36.4L29 118H8L40 36zm10 20.5-9.2 25h18.4L50 56.5z"/>
+      </svg>
+      <p class="lockup-name">Art Impact</p>
+      <p class="lockup-base">Think Tank &bull; Culture &bull; Entreprises &bull; Territoires</p>
+    </div>
     <p class="eyebrow">Think Tank &middot; Responsabilité Culturelle des Entreprises</p>
     <h1>La culture, pilier d’impact des organisations et des territoires.</h1>
     <p class="lead">Art Impact est né d’une conviction simple&nbsp;: la culture est l’un des leviers les plus

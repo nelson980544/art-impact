@@ -306,3 +306,25 @@ section{position:relative}
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none}
 }
+
+/* ---------- Bloc logo d'ouverture (accueil) ---------- */
+.logo-lockup{text-align:center;margin:0 auto clamp(48px,7vh,78px);max-width:640px}
+.lockup-mark{
+  height:clamp(72px,11vw,104px);width:auto;display:block;margin:0 auto 26px;
+  color:var(--gold);fill:currentColor;
+}
+.lockup-name{
+  font-family:var(--serif);font-weight:300;
+  font-size:clamp(2.1rem,5vw,3.4rem);line-height:1;
+  letter-spacing:.02em;color:#F5F2EC;margin:0 0 18px;
+}
+.lockup-base{
+  font-size:clamp(.66rem,1.5vw,.78rem);letter-spacing:.2em;text-transform:uppercase;
+  color:var(--text-dim);margin:0;line-height:1.7;
+}
+.logo-lockup + .eyebrow{justify-content:center}
+.logo-lockup + .eyebrow::before,
+.logo-lockup + .eyebrow::after{content:"";flex:1;height:1px;background:var(--line);max-width:90px}
+@media(max-width:560px){
+  .lockup-base{letter-spacing:.14em}
+}
