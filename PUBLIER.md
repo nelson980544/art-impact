@@ -74,3 +74,42 @@ La mise en ligne prend une à deux minutes.
 - **800 mots minimum** pour une note de fond ; en dessous, l'article pèse peu.
 - **Faire des liens** vers les autres pages du site (`../rce.html`, `../observatoire.html`) :
   cela répartit la popularité et aide à la compréhension du sujet.
+
+---
+
+## Le circuit avec Laurent Mayer
+
+### Dépôt
+
+Laurent dépose ses textes dans le dossier Google Drive
+**« Art Impact — Articles à publier »**
+(`1GtVN-nnA_jZ67PNGPGFm21llEJwWSsO6`), partagé avec `laurent@art-for-good.org`
+en tant que contributeur. Le dossier contient un mode d'emploi à son intention.
+
+### Traitement
+
+Sur demande (« regarde le Drive »), Claude :
+
+1. liste les documents du dossier et repère les nouveaux ;
+2. lit le contenu et en extrait titre, résumé, catégorie, auteur, date ;
+3. convertit en Markdown dans `contenu/<slug>.md` ;
+4. optimise le référencement : titre, meta description calibrée, structure des
+   titres, sous-titres interrogatifs, maillage interne, mots-clés ;
+5. génère le site et **présente le résultat pour validation** ;
+6. publie après accord.
+
+### Notification
+
+Une fois l'article en ligne, Claude crée un document
+« Article publié — <titre> » contenant le lien et le récapitulatif des
+optimisations, puis le **partage avec `laurent@art-for-good.org`**.
+Google envoie alors automatiquement un email de notification.
+
+C'est le mécanisme retenu faute de connecteur email : le résultat est
+équivalent côté destinataire.
+
+### Règle d'attribution
+
+Le champ `auteur` d'un article doit correspondre à la personne qui a
+**réellement écrit** le texte. Un article rédigé ou largement reformulé par
+Claude ne doit pas être signé d'un nom de personne sans son accord explicite.
