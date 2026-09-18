@@ -153,10 +153,16 @@ section{position:relative}
   display:inline-flex;align-items:center;gap:11px;
   padding:14px 28px;border-radius:2px;font-size:.8rem;letter-spacing:.11em;
   text-transform:uppercase;font-weight:500;transition:.28s;border:1px solid transparent;
+  /* Neutralise le style natif des <button> : sans cela, un bouton sans
+     background declare herite du gris systeme et devient illisible. */
+  background:transparent;font-family:var(--sans);line-height:1;
+  cursor:pointer;-webkit-appearance:none;appearance:none;
 }
+.btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 .btn-primary{background:var(--gold);color:var(--ink)}
 .btn-primary:hover{background:var(--gold-soft)}
-.btn-ghost{border-color:var(--line);color:var(--text)}
+.btn-ghost{border-color:var(--line);color:var(--text);background:transparent}
+.btn-ghost:hover{background:transparent}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 .btn .arw{transition:transform .28s}
 .btn:hover .arw{transform:translateX(4px)}
