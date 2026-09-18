@@ -17,7 +17,7 @@ HELLOASSO = "https://www.helloasso.com/associations/art-for-good"
 # Web3Forms — 250 envois/mois gratuits, sans compte.
 # Récupérer la clé sur https://web3forms.com (saisir l'email de réception,
 # la clé arrive par mail) puis la coller ci-dessous.
-WEB3FORMS_KEY = "REMPLACER_PAR_VOTRE_CLE_WEB3FORMS"
+WEB3FORMS_KEY = "12908036-d737-40ae-87fd-17d9fc65e932"
 FORM_ENDPOINT = "https://api.web3forms.com/submit"
 
 NAV = [
@@ -904,6 +904,7 @@ CONTACT = page_hero(
           <input type="hidden" name="access_key" value="{w3key}">
           <input type="hidden" name="subject" value="Art Impact — nouveau message depuis le site">
           <input type="hidden" name="from_name" value="Site Art Impact">
+          <input type="hidden" name="replyto" value="email">
           <input type="hidden" name="redirect" value="{site}/merci.html">
           <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-row">
@@ -972,6 +973,7 @@ CONTACT = page_hero(
           <input type="hidden" name="access_key" value="{w3key}">
           <input type="hidden" name="subject" value="Art Impact — inscription newsletter">
           <input type="hidden" name="from_name" value="Site Art Impact">
+          <input type="hidden" name="replyto" value="email">
           <input type="hidden" name="redirect" value="{site}/merci.html">
           <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="sujet" value="Inscription newsletter">

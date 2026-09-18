@@ -36,7 +36,6 @@ Il est également possible d'éditer directement les `.html` (attention : une r�
 
 ## À compléter
 
-- `WEB3FORMS_KEY` dans `build.py` : clé d'accès Web3Forms (voir ci-dessous).
 - Mentions légales : siège, RNA/SIREN, directeur de la publication.
 
 ## Formulaires (Web3Forms)
@@ -44,9 +43,11 @@ Il est également possible d'éditer directement les `.html` (attention : une r�
 Les formulaires de contact et de newsletter passent par [Web3Forms](https://web3forms.com)
 (250 envois/mois gratuits, sans compte). Pour les activer :
 
-1. Aller sur https://web3forms.com, saisir l'adresse de réception (`contact@art-impact.fr`).
-2. La clé d'accès arrive par email.
-3. Remplacer `WEB3FORMS_KEY` dans `build.py`, puis `python build.py` et commiter.
+La clé est renseignée dans `WEB3FORMS_KEY` (`build.py`). Pour changer l'adresse de
+réception, il faut regénérer une clé sur https://web3forms.com et remplacer la valeur.
+
+L'`access_key` Web3Forms est conçue pour être publique (elle vit dans le HTML côté
+navigateur) : elle ne donne accès qu'à l'envoi vers l'adresse associée.
 
 Après envoi, l'internaute est redirigé vers `merci.html`. Un champ honeypot `botcheck`
 filtre les robots.
