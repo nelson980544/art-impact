@@ -1018,9 +1018,10 @@ MENTIONS = page_hero(
     association loi 1901, qui porte le think tank Art Impact.</p>
     <ul class="bullets" style="margin-top:22px">
       <li><strong>Directeur de la publication</strong>&nbsp;: Laurent Mayer</li>
+      <li><strong>Siège social</strong>&nbsp;: 54 rue René Boulanger, 75010 Paris</li>
+      <li><strong>Numéro RNA</strong>&nbsp;: W751271647</li>
+      <li><strong>SIRET</strong>&nbsp;: 934 164 328 00015 &mdash; <strong>SIREN</strong>&nbsp;: 934 164 328</li>
       <li><strong>Contact</strong>&nbsp;: <a href="mailto:{email}" style="color:var(--gold)">{email}</a></li>
-      <li><strong>Siège social</strong>&nbsp;: <em>à compléter</em></li>
-      <li><strong>Numéro RNA</strong>&nbsp;: <em>à compléter</em></li>
     </ul>
 
     <h2 style="margin-top:56px">Hébergement</h2>
@@ -1262,6 +1263,15 @@ def jsonld_page(slug, title, desc):
         "image": SITE + "/assets/img/og-image.jpg",
         "description": "Art Impact est le think tank qui place la culture au cœur des stratégies "
                        "d’impact des entreprises et des territoires.",
+        "foundingDate": "2023-11-04",
+        "address": {"@type": "PostalAddress", "streetAddress": "54 rue René Boulanger",
+                    "postalCode": "75010", "addressLocality": "Paris",
+                    "addressCountry": "FR"},
+        "identifier": [
+            {"@type": "PropertyValue", "propertyID": "SIRET", "value": "93416432800015"},
+            {"@type": "PropertyValue", "propertyID": "SIREN", "value": "934164328"},
+            {"@type": "PropertyValue", "propertyID": "RNA", "value": "W751271647"},
+        ],
         "areaServed": {"@type": "Country", "name": "France"},
         "knowsAbout": ["Responsabilité Culturelle des Entreprises", "RCE", "impact culturel",
                        "mécénat culturel", "RSE", "attractivité territoriale",
