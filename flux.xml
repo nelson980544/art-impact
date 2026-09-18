@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Art Impact — Publications</title>
+  <link>https://art-impact.org/publications.html</link>
+  <atom:link href="https://art-impact.org/flux.xml" rel="self" type="application/rss+xml"/>
+  <description>Les travaux du think tank Art Impact sur la Responsabilité Culturelle des Entreprises.</description>
+  <language>fr-FR</language>
+  <lastBuildDate>Fri, 18 Sep 2026 20:25:02 +0000</lastBuildDate>
+  <item>
+    <title>Pourquoi la culture devient un enjeu stratégique pour les entreprises</title>
+    <link>https://art-impact.org/publications/pourquoi-la-culture-devient-un-enjeu-strategique.html</link>
+    <guid isPermaLink="true">https://art-impact.org/publications/pourquoi-la-culture-devient-un-enjeu-strategique.html</guid>
+    <description>La culture quitte le registre du mécénat pour rejoindre celui de la stratégie. Analyse des quatre bascules qui expliquent ce déplacement.</description>
+    <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+    <category>Note d'analyse</category>
+    <dc:creator>Laurent Mayer</dc:creator>
+  </item>
+</channel>
+</rss>

@@ -356,3 +356,49 @@ section{position:relative}
   font-size:1rem;max-width:72ch;
 }
 .qa summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
+
+/* ---------- Article ---------- */
+.article{padding-top:clamp(52px,8vh,86px)}
+.article h1{font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:26px}
+.art-meta{
+  display:flex;flex-wrap:wrap;gap:10px 26px;margin:0;
+  font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);
+}
+.art-meta > *{display:flex;align-items:center;gap:9px}
+.art-meta > *::before{content:"";width:5px;height:5px;background:var(--gold);border-radius:50%}
+.card .art-meta{letter-spacing:.1em}
+
+.prose{font-size:1.06rem;line-height:1.82;color:#D9D6D0}
+.prose > *:first-child{margin-top:0}
+.prose h2{
+  font-size:clamp(1.5rem,2.8vw,2.05rem);margin:56px 0 20px;color:#F2EFE8;
+  padding-top:22px;border-top:1px solid var(--line-soft);
+}
+.prose h3{font-size:clamp(1.18rem,2vw,1.42rem);margin:38px 0 14px;color:#F2EFE8}
+.prose p{margin:0 0 1.35em}
+.prose strong{color:#F5F2EC}
+.prose em{color:var(--text-dim)}
+.prose a{color:var(--gold);border-bottom:1px solid rgba(201,162,39,.35)}
+.prose a:hover{border-color:var(--gold)}
+.prose ul,.prose ol{margin:0 0 1.5em;padding-left:1.3em}
+.prose li{margin-bottom:.6em;padding-left:.3em}
+.prose li::marker{color:var(--gold)}
+.prose blockquote{
+  border-left:2px solid var(--gold);margin:38px 0;padding:6px 0 6px 28px;
+  font-family:var(--serif);font-size:1.3rem;line-height:1.5;color:#F2EFE8;
+}
+.prose blockquote p{margin:0}
+.prose hr{border:0;height:1px;background:var(--line-soft);margin:48px 0}
+.prose code{
+  background:var(--ink-3);padding:2px 7px;border-radius:2px;
+  font-size:.9em;color:var(--gold-soft);
+}
+.prose img{border-radius:3px;margin:34px 0}
+
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin:46px 0 0}
+.tags span{
+  font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);
+  border:1px solid var(--line-soft);padding:6px 13px;border-radius:2px;
+}
+.card h3 a{transition:color .25s}
+.card h3 a:hover{color:var(--gold-soft)}

@@ -55,12 +55,13 @@ TEMPLATE = """<!DOCTYPE html>
 <meta name="twitter:image" content="{site}/assets/img/og-image.jpg">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="author" content="Art Impact">
-<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-<link rel="apple-touch-icon" href="assets/img/favicon.svg">
+<link rel="icon" type="image/svg+xml" href="{base}assets/img/favicon.svg">
+<link rel="apple-touch-icon" href="{base}assets/img/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="{base}assets/css/style.css">
+<link rel="alternate" type="application/rss+xml" title="Art Impact — Publications" href="{site}/flux.xml">
 <script type="application/ld+json">
 {jsonld}
 </script>
@@ -69,7 +70,7 @@ TEMPLATE = """<!DOCTYPE html>
 
 <header class="site-header">
   <div class="wrap nav">
-    <a class="brand" href="index.html" aria-label="Art Impact, accueil">
+    <a class="brand" href="{base}index.html" aria-label="Art Impact, accueil">
       <svg class="brand-mark" viewBox="0 0 100 124" aria-hidden="true" focusable="false"><circle cx="50" cy="15" r="12.5"/><path fill-rule="evenodd" d="M40 36h20l32 82H71l-7.4-19H36.4L29 118H8L40 36zm10 20.5-9.2 25h18.4L50 56.5z"/></svg>
       <span>
         <span class="brand-name">Art Impact</span>
@@ -81,7 +82,7 @@ TEMPLATE = """<!DOCTYPE html>
     </button>
     <ul class="nav-links" id="menu-principal">
       {nav}
-      <li><a class="nav-cta" href="contact.html">Nous contacter</a></li>
+      <li><a class="nav-cta" href="{base}contact.html">Nous contacter</a></li>
     </ul>
   </div>
 </header>
@@ -94,7 +95,7 @@ TEMPLATE = """<!DOCTYPE html>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <a class="brand" href="index.html">
+        <a class="brand" href="{base}index.html">
           <svg class="brand-mark" viewBox="0 0 100 124" aria-hidden="true" focusable="false"><circle cx="50" cy="15" r="12.5"/><path fill-rule="evenodd" d="M40 36h20l32 82H71l-7.4-19H36.4L29 118H8L40 36zm10 20.5-9.2 25h18.4L50 56.5z"/></svg>
           <span>
             <span class="brand-name">Art Impact</span>
@@ -106,26 +107,27 @@ TEMPLATE = """<!DOCTYPE html>
       <div>
         <h4>Comprendre</h4>
         <ul>
-          <li><a href="think-tank.html">Le Think Tank</a></li>
-          <li><a href="rce.html">La RCE</a></li>
-          <li><a href="observatoire.html">Observatoire National RCE</a></li>
-          <li><a href="ressources.html">Plateforme de ressources</a></li>
+          <li><a href="{base}think-tank.html">Le Think Tank</a></li>
+          <li><a href="{base}rce.html">La RCE</a></li>
+          <li><a href="{base}observatoire.html">Observatoire National RCE</a></li>
+          <li><a href="{base}publications.html">Publications</a></li>
+          <li><a href="{base}ressources.html">Plateforme de ressources</a></li>
         </ul>
       </div>
       <div>
         <h4>Agir</h4>
         <ul>
-          <li><a href="programmes.html">Programmes &amp; Territoires</a></li>
-          <li><a href="evenements.html">Événements</a></li>
-          <li><a href="art-for-good.html">Art for Good</a></li>
-          <li><a href="go-for-art.html">Go-for-Art.com</a></li>
+          <li><a href="{base}programmes.html">Programmes &amp; Territoires</a></li>
+          <li><a href="{base}evenements.html">Événements</a></li>
+          <li><a href="{base}art-for-good.html">Art for Good</a></li>
+          <li><a href="{base}go-for-art.html">Go-for-Art.com</a></li>
         </ul>
       </div>
       <div>
         <h4>Dialoguer</h4>
         <ul>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="presse.html">Presse &amp; Médias</a></li>
+          <li><a href="{base}contact.html">Contact</a></li>
+          <li><a href="{base}presse.html">Presse &amp; Médias</a></li>
           <li><a href="{helloasso}" target="_blank" rel="noopener">Faire un don</a></li>
           <li><a href="mailto:{email}">{email}</a></li>
         </ul>
@@ -134,15 +136,15 @@ TEMPLATE = """<!DOCTYPE html>
     <div class="foot-bottom">
       <p>© 2026 Art Impact — Une initiative portée par l’association Art for Good.</p>
       <nav aria-label="Liens légaux">
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="mentions-legales.html#donnees">Données personnelles</a>
-        <a href="presse.html">Kit média</a>
+        <a href="{base}mentions-legales.html">Mentions légales</a>
+        <a href="{base}mentions-legales.html#donnees">Données personnelles</a>
+        <a href="{base}presse.html">Kit média</a>
       </nav>
     </div>
   </div>
 </footer>
 
-<script src="assets/js/main.js" defer></script>
+<script src="{base}assets/js/main.js" defer></script>
 </body>
 </html>
 """
@@ -685,10 +687,12 @@ RESSOURCES = page_hero(
     </div>
     <div class="pull reveal" style="margin-top:56px">
       <p class="serif-quote">La plateforme s’enrichit au rythme des travaux du think tank.</p>
-      <p class="dim" style="margin:14px 0 0">Les premières publications seront mises en ligne
-      progressivement. Inscrivez-vous à la newsletter pour être informé de chaque parution.</p>
+      <p class="dim" style="margin:14px 0 0">Retrouvez l’ensemble des notes d’analyse et des
+      publications d’Art Impact, ou inscrivez-vous à la newsletter pour être informé de
+      chaque parution.</p>
       <div class="btn-row">
-        <a class="btn btn-primary" href="contact.html#newsletter">Recevoir les publications <span class="arw">&rarr;</span></a>
+        <a class="btn btn-primary" href="publications.html">Voir les publications <span class="arw">&rarr;</span></a>
+        <a class="btn btn-ghost" href="contact.html#newsletter">Recevoir la newsletter</a>
       </div>
     </div>
   </div>
@@ -1377,7 +1381,244 @@ SITEURL
     print("  + llms.txt")
 
 
+# ==========================================================================
+# PUBLICATIONS — articles rediges en Markdown dans le dossier contenu/
+# ==========================================================================
+# Chaque fichier contenu/<slug>.md commence par un en-tete simple :
+#
+#   titre: Mon titre
+#   description: Resume de 150 caracteres pour Google
+#   date: 2026-09-18
+#   auteur: Laurent Mayer
+#   categorie: Note d'analyse
+#   motscles: RCE, culture, entreprise
+#   ---
+#   Le corps de l'article en Markdown.
+#
+# `python build.py` genere publications/<slug>.html, l'index et le flux RSS.
+
+import re as _re
+from email.utils import format_datetime as _fmtdate
+from datetime import datetime as _dt, timezone as _tz
+
+DOSSIER_CONTENU = ROOT / "contenu"
+DOSSIER_PUBLI = ROOT / "publications"
+
+
+def _lire_article(chemin):
+    """Lit un fichier Markdown et renvoie ses metadonnees + son corps."""
+    brut = chemin.read_text(encoding="utf-8")
+    if "\n---" in brut:
+        entete, corps = brut.split("\n---", 1)
+    else:
+        entete, corps = "", brut
+    meta = {}
+    for ligne in entete.splitlines():
+        if ":" in ligne and not ligne.startswith("#"):
+            cle, _, val = ligne.partition(":")
+            meta[cle.strip().lower()] = val.strip()
+
+    try:
+        import markdown as _md
+        html = _md.markdown(corps.strip(), extensions=["extra", "sane_lists", "toc"])
+    except ImportError:
+        raise SystemExit("Module manquant : lancez  python -m pip install markdown")
+
+    mots = len(_re.sub(r"<[^>]+>", " ", html).split())
+    meta.setdefault("titre", chemin.stem.replace("-", " ").capitalize())
+    meta.setdefault("description", "")
+    meta.setdefault("date", _dt.now().strftime("%Y-%m-%d"))
+    meta.setdefault("auteur", "Art Impact")
+    meta.setdefault("categorie", "Publication")
+    meta.setdefault("motscles", "")
+    meta["slug"] = chemin.stem
+    meta["html"] = html
+    meta["lecture"] = max(1, round(mots / 200))
+    meta["mots"] = mots
+    return meta
+
+
+def _date_fr(iso):
+    MOIS = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet",
+            "août", "septembre", "octobre", "novembre", "décembre"]
+    try:
+        d = _dt.strptime(iso, "%Y-%m-%d")
+        return "{} {} {}".format(d.day, MOIS[d.month - 1], d.year)
+    except ValueError:
+        return iso
+
+
+def charger_articles():
+    """Tous les articles, du plus recent au plus ancien."""
+    if not DOSSIER_CONTENU.exists():
+        return []
+    arts = [_lire_article(f) for f in DOSSIER_CONTENU.glob("*.md")]
+    return sorted(arts, key=lambda a: a["date"], reverse=True)
+
+
+def corps_article(a):
+    """Page d un article."""
+    kw = [m.strip() for m in a["motscles"].split(",") if m.strip()]
+    tags = ""
+    if kw:
+        tags = ('<p class="tags">' +
+                "".join('<span>{}</span>'.format(m) for m in kw) + "</p>")
+    return """
+<article class="sec article">
+  <div class="wrap narrow">
+    <p class="eyebrow">{cat}</p>
+    <h1>{titre}</h1>
+    <p class="lead">{desc}</p>
+    <p class="art-meta">
+      <span>{auteur}</span>
+      <time datetime="{date}">{date_fr}</time>
+      <span>{lecture} min de lecture</span>
+    </p>
+    <hr class="rule" style="margin:38px 0 46px">
+    <div class="prose">
+{html}
+    </div>
+    {tags}
+    <div class="btn-row">
+      <a class="btn btn-ghost" href="../publications.html">&larr; Toutes les publications</a>
+      <a class="btn btn-primary" href="../contact.html">Échanger avec nous <span class="arw">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+""".format(cat=a["categorie"], titre=a["titre"], desc=a["description"],
+           auteur=a["auteur"], date=a["date"], date_fr=_date_fr(a["date"]),
+           lecture=a["lecture"], html=a["html"], tags=tags)
+
+
+def corps_index(articles):
+    """Page listant toutes les publications."""
+    if not articles:
+        liste = ('<p class="lead dim">Les premières publications du think tank '
+                 'seront mises en ligne prochainement.</p>')
+    else:
+        liste = '<div class="cards">' + "".join("""
+      <article class="card">
+        <p class="eyebrow solo" style="margin-bottom:14px">{cat}</p>
+        <h3><a href="publications/{slug}.html">{titre}</a></h3>
+        <p>{desc}</p>
+        <p class="art-meta" style="margin-top:20px">
+          <time datetime="{date}">{date_fr}</time>
+          <span>{lecture} min</span>
+        </p>
+      </article>""".format(cat=a["categorie"], slug=a["slug"], titre=a["titre"],
+                           desc=a["description"], date=a["date"],
+                           date_fr=_date_fr(a["date"]), lecture=a["lecture"])
+                                            for a in articles) + "</div>"
+    return """
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Publications</p>
+    <h1>Les travaux du think tank</h1>
+    <p class="lead">Notes d’analyse, rapports et actualités d’Art Impact sur la
+    Responsabilité Culturelle des Entreprises.</p>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    {liste}
+  </div>
+</section>
+""".replace("{liste}", liste)
+
+
+def jsonld_article(a):
+    url = "{}/publications/{}.html".format(SITE, a["slug"])
+    return _json.dumps({
+        "@context": "https://schema.org",
+        "@graph": [{
+            "@type": "Article", "@id": url + "#article",
+            "headline": a["titre"][:110], "description": a["description"],
+            "datePublished": a["date"], "dateModified": a["date"],
+            "inLanguage": "fr-FR", "url": url,
+            "mainEntityOfPage": {"@type": "WebPage", "@id": url},
+            "author": {"@type": "Person", "name": a["auteur"]},
+            "publisher": {"@id": SITE + "/#organisation"},
+            "image": SITE + "/assets/img/og-image.jpg",
+            "keywords": a["motscles"],
+            "articleSection": a["categorie"],
+            "wordCount": a["mots"],
+            "isPartOf": {"@id": SITE + "/#site"},
+        }, {
+            "@type": "BreadcrumbList", "@id": url + "#fil",
+            "itemListElement": [
+                {"@type": "ListItem", "position": 1, "name": "Accueil", "item": SITE + "/"},
+                {"@type": "ListItem", "position": 2, "name": "Publications",
+                 "item": SITE + "/publications.html"},
+                {"@type": "ListItem", "position": 3, "name": a["titre"], "item": url},
+            ],
+        }],
+    }, ensure_ascii=False, separators=(",", ":"))
+
+
+def ecrire_flux(articles):
+    """Flux RSS : lu par les agregateurs, les journalistes et les IA."""
+    items = ""
+    for a in articles[:20]:
+        url = "{}/publications/{}.html".format(SITE, a["slug"])
+        try:
+            d = _dt.strptime(a["date"], "%Y-%m-%d").replace(tzinfo=_tz.utc)
+            pub = _fmtdate(d)
+        except ValueError:
+            pub = ""
+        items += """
+  <item>
+    <title>{t}</title>
+    <link>{u}</link>
+    <guid isPermaLink="true">{u}</guid>
+    <description>{d}</description>
+    <pubDate>{p}</pubDate>
+    <category>{c}</category>
+    <dc:creator>{a}</dc:creator>
+  </item>""".format(t=_echap(a["titre"]), u=url, d=_echap(a["description"]),
+                    p=pub, c=_echap(a["categorie"]), a=_echap(a["auteur"]))
+
+    flux = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Art Impact — Publications</title>
+  <link>{site}/publications.html</link>
+  <atom:link href="{site}/flux.xml" rel="self" type="application/rss+xml"/>
+  <description>Les travaux du think tank Art Impact sur la Responsabilité Culturelle des Entreprises.</description>
+  <language>fr-FR</language>
+  <lastBuildDate>{now}</lastBuildDate>{items}
+</channel>
+</rss>
+""".format(site=SITE, now=_fmtdate(_dt.now(_tz.utc)), items=items)
+    (ROOT / "flux.xml").write_text(flux, encoding="utf-8")
+    print("  + flux.xml")
+
+
+def _echap(s):
+    return (s.replace("&", "&amp;").replace("<", "&lt;")
+             .replace(">", "&gt;").replace('"', "&quot;"))
+
+
+def rendre(slug, title, desc, body, jsonld, base=""):
+    """Assemble une page complete. `base` prefixe les chemins relatifs
+    lorsque la page vit dans un sous-dossier (les articles)."""
+    nav = "\n      ".join(
+        '<li><a href="{b}{h}"{cur}>{label}</a></li>'.format(
+            b=base, h=href, label=label,
+            cur=' aria-current="page"' if href == slug else "")
+        for href, label in NAV
+    )
+    return TEMPLATE.format(
+        jsonld=jsonld, title=title, desc=desc.replace('"', "&quot;"),
+        slug=slug, site=SITE, email=EMAIL, helloasso=HELLOASSO,
+        nav=nav, body=body, base=base,
+    )
+
+
 def build():
+    articles = charger_articles()
+
     for slug, title, desc, body in PAGES:
         nav = "\n      ".join(
             '<li><a href="{h}"{cur}>{label}</a></li>'.format(
@@ -1396,10 +1637,36 @@ def build():
             title=title, desc=desc.replace('"', "&quot;"),
             slug="" if slug == "index.html" else slug,
             site=SITE, email=EMAIL, helloasso=HELLOASSO,
-            nav=nav, body=body,
+            nav=nav, body=body, base="",
         )
         (ROOT / slug).write_text(html, encoding="utf-8")
         print("  +", slug)
+
+    # --- Publications ---
+    DOSSIER_PUBLI.mkdir(exist_ok=True)
+    for a in articles:
+        html = rendre(
+            slug="publications/" + a["slug"] + ".html",
+            title=a["titre"] + " — Art Impact",
+            desc=a["description"],
+            body=corps_article(a),
+            jsonld=jsonld_article(a),
+            base="../",
+        )
+        (DOSSIER_PUBLI / (a["slug"] + ".html")).write_text(html, encoding="utf-8")
+        print("  + publications/" + a["slug"] + ".html")
+
+    (ROOT / "publications.html").write_text(rendre(
+        slug="publications.html",
+        title="Publications — Art Impact",
+        desc="Notes d’analyse, rapports et actualités du think tank Art Impact "
+             "sur la Responsabilité Culturelle des Entreprises.",
+        body=corps_index(articles),
+        jsonld=jsonld_page("publications.html", "Publications — Art Impact",
+                           "Les travaux du think tank Art Impact."),
+    ), encoding="utf-8")
+    print("  + publications.html")
+    ecrire_flux(articles)
 
     # sitemap.xml
     urls = "\n".join(
@@ -1409,6 +1676,16 @@ def build():
             "1.0" if s == "index.html" else "0.8")
         for s, _, _, _ in PAGES if s != "merci.html"
     )
+    urls += "\n" + "\n".join(
+        "  <url><loc>{}/publications.html</loc><lastmod>{}</lastmod>"
+        "<changefreq>weekly</changefreq><priority>0.9</priority></url>".format(
+            SITE, _date.today().isoformat())
+        for _ in [0]
+    )
+    for a in articles:
+        urls += ("\n  <url><loc>{}/publications/{}.html</loc><lastmod>{}</lastmod>"
+                 "<changefreq>yearly</changefreq><priority>0.7</priority></url>").format(
+            SITE, a["slug"], a["date"])
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -1429,7 +1706,6 @@ def build():
     (ROOT / "robots.txt").write_text("\n".join(lignes), encoding="utf-8")
     print("  + robots.txt")
     ecrire_llms()
-    print("  + robots.txt")
 
 
 if __name__ == "__main__":
