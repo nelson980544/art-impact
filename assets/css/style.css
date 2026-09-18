@@ -63,10 +63,11 @@ strong{font-weight:600;color:#F5F2EC}
 .nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
 .brand-mark{
-  width:32px;height:32px;border:1px solid var(--gold);border-radius:50%;
-  display:grid;place-items:center;font-family:var(--serif);font-size:.95rem;color:var(--gold);
-  flex-shrink:0;
+  width:auto;height:34px;flex-shrink:0;display:block;
+  color:var(--gold);fill:currentColor;transition:color .3s;
 }
+.brand:hover .brand-mark{color:var(--gold-soft)}
+.site-footer .brand-mark{height:38px}
 .brand-name{font-family:var(--serif);font-size:1.32rem;letter-spacing:.02em;line-height:1}
 .brand-sub{display:block;font-family:var(--sans);font-size:.58rem;letter-spacing:.2em;
   text-transform:uppercase;color:var(--text-dim);margin-top:3px}
