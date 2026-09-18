@@ -88,7 +88,7 @@ en tant que contributeur. Le dossier contient un mode d'emploi à son intention.
 
 ### Traitement
 
-Sur demande (« regarde le Drive »), Claude :
+Sur demande, le traitement consiste à :
 
 1. liste les documents du dossier et repère les nouveaux ;
 2. lit le contenu et en extrait titre, résumé, catégorie, auteur, date ;
@@ -100,16 +100,13 @@ Sur demande (« regarde le Drive »), Claude :
 
 ### Notification
 
-Une fois l'article en ligne, Claude crée un document
-« Article publié — <titre> » contenant le lien et le récapitulatif des
-optimisations, puis le **partage avec `laurent@art-for-good.org`**.
-Google envoie alors automatiquement un email de notification.
-
-C'est le mécanisme retenu faute de connecteur email : le résultat est
-équivalent côté destinataire.
+Une fois l'article en ligne, un document « Article publié — <titre> »
+est créé avec le lien et le récapitulatif des optimisations, puis
+**partagé avec `laurent@art-for-good.org`**. Google envoie alors
+automatiquement un email de notification.
 
 ### Règle d'attribution
 
 Le champ `auteur` d'un article doit correspondre à la personne qui a
-**réellement écrit** le texte. Un article rédigé ou largement reformulé par
-Claude ne doit pas être signé d'un nom de personne sans son accord explicite.
+**réellement écrit** le texte. Aucun article ne doit être signé du nom d'une
+personne sans son accord explicite.
