@@ -31,10 +31,22 @@ Il est également possible d'éditer directement les `.html` (attention : une r�
 | `go-for-art.html` | Go-for-Art.com |
 | `presse.html` | Presse & Médias |
 | `contact.html` | Contact, newsletter, don |
+| `merci.html` | Confirmation d'envoi de formulaire |
 | `mentions-legales.html` | Mentions légales & RGPD |
 
 ## À compléter
 
-- `FORM_ENDPOINT` dans `build.py` : identifiant Formspree (ou autre service) pour les formulaires.
-- `HELLOASSO` : URL exacte de la page de don HelloAsso d'Art for Good.
+- `WEB3FORMS_KEY` dans `build.py` : clé d'accès Web3Forms (voir ci-dessous).
 - Mentions légales : siège, RNA/SIREN, directeur de la publication.
+
+## Formulaires (Web3Forms)
+
+Les formulaires de contact et de newsletter passent par [Web3Forms](https://web3forms.com)
+(250 envois/mois gratuits, sans compte). Pour les activer :
+
+1. Aller sur https://web3forms.com, saisir l'adresse de réception (`contact@art-impact.fr`).
+2. La clé d'accès arrive par email.
+3. Remplacer `WEB3FORMS_KEY` dans `build.py`, puis `python build.py` et commiter.
+
+Après envoi, l'internaute est redirigé vers `merci.html`. Un champ honeypot `botcheck`
+filtre les robots.

@@ -69,7 +69,12 @@
     <div class="split reveal">
       <div>
         <h2 style="margin-bottom:28px">Écrivez-nous</h2>
-        <form class="form" action="https://formspree.io/f/REMPLACER_PAR_VOTRE_ID" method="POST">
+        <form class="form" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="REMPLACER_PAR_VOTRE_CLE_WEB3FORMS">
+          <input type="hidden" name="subject" value="Art Impact — nouveau message depuis le site">
+          <input type="hidden" name="from_name" value="Site Art Impact">
+          <input type="hidden" name="redirect" value="https://art-impact.fr/merci.html">
+          <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <div class="field">
               <label for="nom">Nom et prénom</label>
@@ -132,7 +137,12 @@
         <h3 id="newsletter" style="margin-top:44px">Newsletter</h3>
         <p class="dim">Recevez les publications du think tank, les résultats de l’Observatoire et les
         invitations aux événements.</p>
-        <form class="form" action="https://formspree.io/f/REMPLACER_PAR_VOTRE_ID" method="POST" style="margin-top:18px">
+        <form class="form" action="https://api.web3forms.com/submit" method="POST" style="margin-top:18px">
+          <input type="hidden" name="access_key" value="REMPLACER_PAR_VOTRE_CLE_WEB3FORMS">
+          <input type="hidden" name="subject" value="Art Impact — inscription newsletter">
+          <input type="hidden" name="from_name" value="Site Art Impact">
+          <input type="hidden" name="redirect" value="https://art-impact.fr/merci.html">
+          <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="sujet" value="Inscription newsletter">
           <div class="field">
             <label for="news-email">Votre email</label>

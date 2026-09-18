@@ -14,7 +14,11 @@ SITE = "https://art-impact.fr"
 EMAIL = "contact@art-impact.fr"
 EMAIL_PRESSE = "presse@art-impact.fr"
 HELLOASSO = "https://www.helloasso.com/associations/art-for-good"
-FORM_ENDPOINT = "https://formspree.io/f/REMPLACER_PAR_VOTRE_ID"
+# Web3Forms — 250 envois/mois gratuits, sans compte.
+# Récupérer la clé sur https://web3forms.com (saisir l'email de réception,
+# la clé arrive par mail) puis la coller ci-dessous.
+WEB3FORMS_KEY = "REMPLACER_PAR_VOTRE_CLE_WEB3FORMS"
+FORM_ENDPOINT = "https://api.web3forms.com/submit"
 
 NAV = [
     ("think-tank.html", "Le Think&nbsp;Tank"),
@@ -888,6 +892,11 @@ CONTACT = page_hero(
       <div>
         <h2 style="margin-bottom:28px">Écrivez-nous</h2>
         <form class="form" action="{form}" method="POST">
+          <input type="hidden" name="access_key" value="{w3key}">
+          <input type="hidden" name="subject" value="Art Impact — nouveau message depuis le site">
+          <input type="hidden" name="from_name" value="Site Art Impact">
+          <input type="hidden" name="redirect" value="{site}/merci.html">
+          <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
           <div class="form-row">
             <div class="field">
               <label for="nom">Nom et prénom</label>
@@ -951,6 +960,11 @@ CONTACT = page_hero(
         <p class="dim">Recevez les publications du think tank, les résultats de l’Observatoire et les
         invitations aux événements.</p>
         <form class="form" action="{form}" method="POST" style="margin-top:18px">
+          <input type="hidden" name="access_key" value="{w3key}">
+          <input type="hidden" name="subject" value="Art Impact — inscription newsletter">
+          <input type="hidden" name="from_name" value="Site Art Impact">
+          <input type="hidden" name="redirect" value="{site}/merci.html">
+          <input type="checkbox" name="botcheck" class="hp" style="display:none" tabindex="-1" autocomplete="off">
           <input type="hidden" name="sujet" value="Inscription newsletter">
           <div class="field">
             <label for="news-email">Votre email</label>
@@ -1017,6 +1031,31 @@ MENTIONS = page_hero(
 
 
 # --------------------------------------------------------------------------
+# 13. MERCI (page d'arrivée après envoi d'un formulaire)
+# --------------------------------------------------------------------------
+MERCI = page_hero(
+    "Message envoyé",
+    "Merci.",
+    "Votre message a bien été transmis à l’équipe d’Art Impact."
+) + """
+<section class="sec">
+  <div class="wrap narrow">
+    <div class="reveal">
+      <p class="lead">Nous revenons vers vous dans les meilleurs délais, généralement sous 48&nbsp;heures
+      ouvrées.</p>
+      <p class="dim">En attendant, vous pouvez poursuivre votre lecture&nbsp;:</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="index.html">Retour à l’accueil <span class="arw">&rarr;</span></a>
+        <a class="btn btn-ghost" href="rce.html">Découvrir la RCE</a>
+        <a class="btn btn-ghost" href="observatoire.html">L’Observatoire</a>
+      </div>
+    </div>
+  </div>
+</section>
+"""
+
+
+# --------------------------------------------------------------------------
 PAGES = [
     # slug, titre <title>, meta description, corps
     ("index.html",
@@ -1074,6 +1113,10 @@ PAGES = [
      "Formulaire, email direct, newsletter et don : Art Impact est un think tank ouvert, en dialogue "
      "permanent avec les entreprises, les institutions et les territoires.",
      CONTACT),
+    ("merci.html",
+     "Merci — Art Impact",
+     "Votre message a bien été transmis à l’équipe d’Art Impact.",
+     MERCI),
     ("mentions-legales.html",
      "Mentions légales — Art Impact",
      "Mentions légales, hébergement, propriété intellectuelle et politique de données personnelles "
@@ -1093,6 +1136,7 @@ def build():
         body = body.format(
             email=EMAIL, email_presse=EMAIL_PRESSE,
             helloasso=HELLOASSO, form=FORM_ENDPOINT, site=SITE,
+            w3key=WEB3FORMS_KEY,
         ) if "{" in body else body
         html = TEMPLATE.format(
             title=title, desc=desc.replace('"', "&quot;"),
@@ -1108,7 +1152,7 @@ def build():
         "  <url><loc>{}/{}</loc><changefreq>monthly</changefreq>"
         "<priority>{}</priority></url>".format(
             SITE, "" if s == "index.html" else s, "1.0" if s == "index.html" else "0.8")
-        for s, _, _, _ in PAGES
+        for s, _, _, _ in PAGES if s != "merci.html"
     )
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
