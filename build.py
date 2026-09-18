@@ -10,7 +10,7 @@ Usage :  python build.py
 from pathlib import Path
 
 ROOT = Path(__file__).parent
-SITE = "https://art-impact.fr"
+SITE = "https://art-impact.org"
 EMAIL = "contact@art-impact.fr"
 EMAIL_PRESSE = "presse@art-impact.fr"
 HELLOASSO = "https://www.helloasso.com/associations/art-for-good"
@@ -1007,7 +1007,7 @@ MENTIONS = page_hero(
 <section class="sec">
   <div class="wrap narrow">
     <h2>Éditeur du site</h2>
-    <p class="dim">Le site art-impact.fr est édité par l’association <strong>Art for Good</strong>,
+    <p class="dim">Le site art-impact.org est édité par l’association <strong>Art for Good</strong>,
     association loi 1901, qui porte le think tank Art Impact.<br>
     Contact&nbsp;: <a href="mailto:{email}" style="color:var(--gold)">{email}</a></p>
     <p class="dim"><em>À compléter&nbsp;: adresse du siège, numéro RNA/SIREN, nom du directeur
