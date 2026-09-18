@@ -11,8 +11,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 SITE = "https://art-impact.org"
-EMAIL = "contact@art-impact.fr"
-EMAIL_PRESSE = "presse@art-impact.fr"
+EMAIL = "contact@art-impact.org"
+EMAIL_PRESSE = "presse@art-impact.org"
 HELLOASSO = "https://www.helloasso.com/associations/art-for-good"
 # Web3Forms — 250 envois/mois gratuits, sans compte.
 # Récupérer la clé sur https://web3forms.com (saisir l'email de réception,
